@@ -7,11 +7,10 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = "eu-south-1"  # Cambia con la tua regione AWS
-}
+provider "null" {}
 
-resource "aws_instance" "example" {
-  ami           = "ami-12345678"  # Sostituisci con una AMI valida
-  instance_type = "t2.micro"
+resource "null_resource" "example" {
+  triggers = {
+    example = "This is a test"
+  }
 }
